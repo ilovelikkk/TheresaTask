@@ -1,25 +1,23 @@
-- [English Setting](#english-setting)
-  * [* 1.Environment setup](#--1environment-setup)
-    + [Install:](#install-)
-  * [2.Run TEST](#2run-test)
-    + [python run with start_test.py](#python-run-with-start-testpy)
-  * [3.Structure introduction](#3structure-introduction)
-  * [4.How case run](#4how-case-run)
-    + [Task Report:](#task-report-)
-  * [5.How to write case](#5how-to-write-case)
-    + [For UI testing](#for-ui-testing)
-      - [(1)Capture element and write it in below location: data>UI>xxxxx.yaml](#-1-capture-element-and-write-it-in-below-location--data-ui-xxxxxyaml)
-      - [(2)Write your case in feature file](#-2-write-your-case-in-feature-file)
-      - [(3)Write your module in module step file in below location: feature > Module_UI > xxxx.py](#-3-write-your-module-in-module-step-file-in-below-location--feature---module-ui---xxxxpy)
-      - [Use more base step action:](#use-more-base-step-action-)
-    + [For API testing:](#for-api-testing-)
-      - [(1) Add test case data in data>API>xxxx.yaml](#-1--add-test-case-data-in-data-api-xxxxyaml)
-      - [(2) Feature file:](#-2--feature-file-)
-      - [(3) API task:](#-3--api-task-)
+- [* 1.Environment setup](#--1environment-setup)
+  * [Install:](#install-)
+- [2.Run TEST](#2run-test)
+  * [python run with start_test.py](#python-run-with-start-testpy)
+- [3.Structure introduction](#3structure-introduction)
+- [4.How case run](#4how-case-run)
+  * [Task Report:](#task-report-)
+- [5.How to write case](#5how-to-write-case)
+  * [For UI testing](#for-ui-testing)
+    + [(1)Capture element and write it in below location: data>UI>xxxxx.yaml](#-1-capture-element-and-write-it-in-below-location--data-ui-xxxxxyaml)
+    + [(2)Write your case in feature file](#-2-write-your-case-in-feature-file)
+    + [(3)Write your module in module step file in below location: feature > Module_UI > xxxx.py](#-3-write-your-module-in-module-step-file-in-below-location--feature---module-ui---xxxxpy)
+    + [Use more base step action:](#use-more-base-step-action-)
+  * [For API testing:](#for-api-testing-)
+    + [(1) Add test case data in data>API>xxxx.yaml](#-1--add-test-case-data-in-data-api-xxxxyaml)
+    + [(2) Feature file:](#-2--feature-file-)
+    + [(3) API task:](#-3--api-task-)
 
 
 
-# English Setting
 ## * 1.Environment setup
 ### Install:
 pip install behave<br>
