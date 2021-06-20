@@ -1,12 +1,14 @@
 import os
-
 import yaml
+
+
+# This is to import the yaml file to dict data
 
 
 def parseyaml(type):
     basepath = os.path.dirname(os.path.dirname(__file__))
     # yaml_path=basepath+"\\PageElement"
-    yaml_path = basepath + "\\data\\"+type
+    yaml_path = basepath + "\\data\\" + type  # type can be 'UI' or API, control in before_feature in environment.py
     pageElements = {}
 
     for fpath, dirname, fnames in os.walk(yaml_path):

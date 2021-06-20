@@ -4,11 +4,13 @@ from selenium import webdriver
 from time import sleep
 
 
+# This is the module for CRO trade page
+
+
 @when('Navigate to homepage')
 def step_impl(context):
     context.driver.implicitly_wait(15)
     context.driver.get('https://crypto.com/exchange')
-
 
 
 @when('Navigate to CRO trade page')
@@ -104,6 +106,7 @@ def step_impl(context):
         then I can see the 24H exist with the CurrentInfo_24H_Vol by the xpath
     ''')
 
+
 @when('Navigate to Open Order in the Order list box module')
 def step_impl(context):
     context.execute_steps('''
@@ -111,6 +114,7 @@ def step_impl(context):
         when I click OpenOrder_btn by the xpath
         then I should see the OpenOrder_table exist by the xpath
     ''')
+
 
 @then('Verify the Open Order module is showing')
 def step_impl(context):
@@ -137,9 +141,11 @@ def step_impl(context):
         then I should see the OrderHistory_table exist by the xpath
     ''')
 
+
 @then('Verify the Order History module is showing')
 def step_impl(context):
     context.execute_steps('''
+        then I should see the OrderHistory_filter exist by the css
         then I can see the Time exist with the OrderHistory_table by the xpath
         then I can see the Order exist with the OrderHistory_table by the xpath
         then I can see the ID exist with the OrderHistory_table by the xpath
@@ -153,5 +159,3 @@ def step_impl(context):
         then I can see the Condition exist with the OrderHistory_table by the xpath
         then I can see the Action exist with the OrderHistory_table by the xpath
     ''')
-
-

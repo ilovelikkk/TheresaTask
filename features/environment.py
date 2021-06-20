@@ -1,14 +1,6 @@
-import os
 import re
-
-import allure
-from selenium import webdriver
-
 from lib.base_functions import *
 from lib.parse_yaml import parseyaml
-
-
-# def before_all(context):
 
 
 def before_feature(context, feature):
@@ -24,13 +16,6 @@ def after_feature(context, feature):
         close_browser(context.driver)
 
 
-# def before_scenario(context, scenario):
-#     context.driver = open_browser()
-#
-# def after_scenario(context, scenario):
-#     close_browser(context.driver)
-#
-#
 def before_step(context, step):
     context.step = step
 

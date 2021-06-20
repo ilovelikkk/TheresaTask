@@ -1,13 +1,11 @@
 import datetime
-import re
-
 import allure
 import requests
 from behave import when, Then
-
 from lib.base_functions import ifEqual
 
 
+# Use get method to send request, store the respond and status code
 @when('I send a request with Get method')
 def step_impl(context):
     context.step.name = context.step.name
@@ -23,6 +21,7 @@ def step_impl(context):
             assert True
 
 
+# Verify the expect status code
 @Then('Verify the status code')
 def step_impl(context):
     context.step.name = context.step.name
@@ -31,6 +30,7 @@ def step_impl(context):
         ifEqual(expect_status_code, context.status_code)
 
 
+# Get the date with parameter, example, the day after tomorrow = after 2 days from today
 @when('I should know date when it is the day after {num} days from today')
 def step_impl(context, num):
     context.step.name = context.step.name
@@ -46,6 +46,7 @@ def step_impl(context, num):
             assert True
 
 
+# Get the mix and max relative humidity from the date get before
 @Then('I can get relative humidity with the date I know before')
 def step_impl(context):
     context.step.name = context.step.name

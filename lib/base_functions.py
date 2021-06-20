@@ -1,10 +1,11 @@
 import os
-
 import allure
 from selenium import webdriver
-from selenium.webdriver import DesiredCapabilities
 
 
+# This is to store some other functions that will be use in base steps
+
+# Open browser with chrome driver
 def open_browser():
     basepath = os.path.dirname(os.path.dirname(__file__))
     driver_path = basepath + '/lib/chromedriver.exe'
@@ -18,11 +19,12 @@ def open_browser():
     return driver
 
 
+# Close browser
 def close_browser(driver):
     driver.quit()
 
 
-# 使用js进行点击，传入cssSelector
+# Click by JS
 def clickByJquery(driver, css):
     js = '$("' + css + '").click()'
     driver.execute_script(js)
@@ -38,6 +40,7 @@ def setXpathByText(title):
 #     action.click(btn)
 #     action.perform()
 
+# Verify two data is equal or not
 def ifEqual(expect, actual):
     if str(expect) == str(actual):
         with allure.step("Verify pass. Expect result is " + str(expect) + ", Actual result is " + str(actual)):
