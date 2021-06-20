@@ -1,4 +1,4 @@
-- [* 1.Environment setup](#--1environment-setup)
+- [1.Environment setup](#--1environment-setup)
   * [Install:](#install-)
 - [2.Run TEST](#2run-test)
   * [python run with start_test.py](#python-run-with-start-testpy)
@@ -18,7 +18,7 @@
 
 
 
-## * 1.Environment setup
+## 1.Environment setup
 ### Install:
 pip install behave<br>
 pip install allure-behave<br>
