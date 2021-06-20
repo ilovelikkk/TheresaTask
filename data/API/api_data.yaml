@@ -1,0 +1,14 @@
+Get respond from 9-days forecast:
+  url : https://pda.weather.gov.hk/locspc/android_data/fnd_uc.xml
+  expect_status_code : 200
+  expect__code : 20011
+  headers :
+      host : pda.weather.gov.hk
+  encoding : utf-8
+
+Get relative humidity for the day after tomorrow :
+  url : https://pda.weather.gov.hk/locspc/android_data/fnd_uc.xml
+  expect_status_code : 200
+  headers :
+      host : pda.weather.gov.hk
+  encoding : utf-8

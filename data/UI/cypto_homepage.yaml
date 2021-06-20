@@ -1,0 +1,13 @@
+CROMarket:
+  xpath : //*[contains(@class,"e-tabs__nav-item") and contains(text(),"CRO")]
+
+CroUsdcLink:
+  xpath : //*[contains(text(),"USDC")]/preceding-sibling::span[contains(text(),"CRO")]//ancestor::*[@class="home-tbody-li"]//button[contains(@class,"trade-btn")]
+  css : div.home-table > div > div:nth-child(48) > div:nth-child(7) > button
+
+ETHCROLink:
+  xpath : //*[contains(text(),"CRO")]/preceding-sibling::span[contains(text(),"ETH")]
+
+CroUsdcChannel:
+  xpath1 : //*[contains(@class,"pair-toggle") and contains(text(),"CRO/USDC")]
+  xpath : //*[contains(@class,"pair-toggle")]

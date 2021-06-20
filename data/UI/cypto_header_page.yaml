@@ -1,0 +1,27 @@
+
+CryptoLogo:
+  xpath : //*[@class="logo-link"]
+
+MarketsLink :
+  xpath : //nav//*[contains(text(),"Markets")]
+
+SpotLink :
+  xpath : //nav//*[contains(text(),"Spot")]
+
+DerivativesLink:
+    xpath : //nav//*[contains(text(),"Derivatives")]
+
+LendingLink:
+    xpath: //nav//*[contains(text(),"Lending")]
+
+LoginLink:
+    xpath: //*[@class="header-right"]//*[contains(text(),"Log In")]
+
+SigninLink:
+    xpath: //*[@class="header-right"]//*[contains(text(),"Sign Up")]
+
+LanguageLink:
+    xpath: //*[@class="header-right"]//*[@class="lang-text"]
+
+ReferAndGetLink:
+    xpath: //nav//*[contains(text(),"Refer and Get $2,000")]

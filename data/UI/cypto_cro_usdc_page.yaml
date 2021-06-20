@@ -1,0 +1,8 @@
+LoginBtn_BuyCRO:
+  xpath : //*[@class="e-tab-pane active"]//*[contains(@class,"trade-block")][1]//button
+
+LoginBtn_SellCRO:
+  xpath : //*[@class="e-tab-pane active"]//*[contains(@class,"trade-block")][2]//button
+
+Login_page_title:
+  xpath : //h4[contains(text(),"Log in to Crypto.com")]
