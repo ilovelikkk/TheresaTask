@@ -88,4 +88,33 @@ LoginBtn_SellCRO:
 Tv_chart_Module:
   id: tv_chart_container
 ```
+#### (2)Write your case in feature file
+```gherkin
+Feature: UI-Automation for CRO/USDC trade page
+  Scenario: Navigate to CRO/USDC trade page
+    When Navigate to CRO trade page
+    Then Verify the CRO trade page is showing
+```
+#### (3)Write your module in module step file in below location: feature > Module_UI > xxxx.py
+```python
+@when('Navigate to CRO trade page')
+def step_impl(context):
+    context.execute_steps('''
+        when Navigate to homepage
+        when I click CROMarket by the xpath
+        then I should see the ETHCROLink exist by the xpath
+        when I use js click with CroUsdcLink by the css
+    ''')
+```
+#### Use more base step action:
+> `Click action` : "I click {somewhere} by the {attribute}" <br> 
+`Sendkey action`: "I input {someword} to the {component} by the {attribute}" <br> 
+`Verify element action`: "I should see the {component} exist by the {attribute}}" <br> 
+`Verify text exist action`: "I can see the {text} exist with the {component} by the {attribute}" <br> 
+`Click by js` : "I use js click with {somewhere} by the {attribute}" <br> 
+`Switch to iframe`: "I can switch to the iframe of {component} by the {attribute}" <br> 
+`Switch back `: "I can switch out of the iframe" <br> 
+`Browser back`: "I want the browser back to the last page" <br> 
+
+Continue...
 
