@@ -1,3 +1,24 @@
+- [English Setting](#english-setting)
+  * [* 1.Environment setup](#--1environment-setup)
+    + [Install:](#install-)
+  * [2.Run TEST](#2run-test)
+    + [python run with start_test.py](#python-run-with-start-testpy)
+  * [3.Structure introduction](#3structure-introduction)
+  * [4.How case run](#4how-case-run)
+    + [Task Report:](#task-report-)
+  * [5.How to write case](#5how-to-write-case)
+    + [For UI testing](#for-ui-testing)
+      - [(1)Capture element and write it in below location: data>UI>xxxxx.yaml](#-1-capture-element-and-write-it-in-below-location--data-ui-xxxxxyaml)
+      - [(2)Write your case in feature file](#-2-write-your-case-in-feature-file)
+      - [(3)Write your module in module step file in below location: feature > Module_UI > xxxx.py](#-3-write-your-module-in-module-step-file-in-below-location--feature---module-ui---xxxxpy)
+      - [Use more base step action:](#use-more-base-step-action-)
+    + [For API testing:](#for-api-testing-)
+      - [(1) Add test case data in data>API>xxxx.yaml](#-1--add-test-case-data-in-data-api-xxxxyaml)
+      - [(2) Feature file:](#-2--feature-file-)
+      - [(3) API task:](#-3--api-task-)
+
+
+
 # English Setting
 ## * 1.Environment setup
 ### Install:
@@ -121,3 +142,80 @@ def step_impl(context):
 
 Continue...
 
+### For API testing:
+#### (1) Add test case data in data>API>xxxx.yaml
+yaml data file example
+```yaml
+Get respond from 9-days forecast:  #test case name
+  url : https://pda.weather.gov.hk/locspc/android_data/fnd_uc.xml
+  expect_status_code : 200
+  expect__code : 20011
+  headers :
+      host : pda.weather.gov.hk
+  encoding : utf-8
+```
+#### (2) Feature file:
+```gherkin
+Feature: API Feature
+  Scenario: Get respond from 9-days forecast
+    When I send a request with Get method
+    Then Verify the status code
+```
+#### (3) API task:
+case:
+```gherkin
+  Scenario: Get relative humidity for the day after tomorrow
+    When I send a request with Get method
+    Then I can get relative humidity for the day after tomorrow
+```
+Module:
+```python
+@Then('I can get relative humidity for the day after tomorrow')
+def step_impl(context):
+    context.execute_steps('''
+            when I should know date when it is the day after 2 days from today
+            Then I can get relative humidity with the date I know before
+        ''')
+```
+step:
+```python
+@Then('Verify the status code')
+def step_impl(context):
+    context.step.name = context.step.name
+    with allure.step(context.step.name):
+        expect_status_code = context.page[context.scenario.name]["expect_status_code"]
+        ifEqual(expect_status_code, context.status_code)
+```     
+```python
+@Then('I can get relative humidity with the date I know before')
+def step_impl(context):
+    context.step.name = context.step.name
+    with allure.step(context.step.name):
+        max_rh = ""
+        min_rh = ""
+        data = context.respond
+        for i in data["forecast_detail"]:
+            # print(i)
+            if i["forecast_date"] == context.expectDate:
+                max_rh = i["max_rh"]
+                min_rh = i["min_rh"]
+                break
+        with allure.step("The relative humidity is from " + str(min_rh) + "% to " + str(max_rh) + "%."):
+            assert True
+```
+
+Continue...
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
