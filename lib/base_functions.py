@@ -29,7 +29,7 @@ def clickByJquery(driver, css):
 
 
 def setXpathByText(title):
-    newTitle='//*[contains(text(),"'+title+'")]'
+    newTitle = '//*[contains(text(),"' + title + '")]'
     return newTitle
 
 
@@ -38,11 +38,10 @@ def setXpathByText(title):
 #     action.click(btn)
 #     action.perform()
 
-def ifEqual(expect,actual):
-    if (str(expect)==str(actual)):
-        with allure.step("Verify pass. Expect result is " + str(expect) + ", Actual result is "+ str(actual)):
+def ifEqual(expect, actual):
+    if str(expect) == str(actual):
+        with allure.step("Verify pass. Expect result is " + str(expect) + ", Actual result is " + str(actual)):
             assert True
     else:
-        with allure.step("Verify failed. Expect result is " + str(expect) + ", Actual result is "+ str(actual)):
+        with allure.step("Verify failed. Expect result is " + str(expect) + ", Actual result is " + str(actual)):
             assert False
-

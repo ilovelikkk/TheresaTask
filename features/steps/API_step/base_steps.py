@@ -19,9 +19,8 @@ def step_impl(context):
         r.encoding = encoding
         context.respond = r.json()
         context.status_code = r.status_code
-        with allure.step("Respond body is "+r.text):
+        with allure.step("Respond body is " + r.text):
             assert True
-
 
 
 @Then('Verify the status code')
@@ -51,15 +50,14 @@ def step_impl(context, num):
 def step_impl(context):
     context.step.name = context.step.name
     with allure.step(context.step.name):
-        max_rh=""
-        min_rh=""
+        max_rh = ""
+        min_rh = ""
         data = context.respond
         for i in data["forecast_detail"]:
             # print(i)
-            if i["forecast_date"]==context.expectDate:
-                max_rh=i["max_rh"]
+            if i["forecast_date"] == context.expectDate:
+                max_rh = i["max_rh"]
                 min_rh = i["min_rh"]
                 break
-        with allure.step("The relative humidity is from "+str(min_rh)+"% to "+ str(max_rh)+"%."):
+        with allure.step("The relative humidity is from " + str(min_rh) + "% to " + str(max_rh) + "%."):
             assert True
-

@@ -9,5 +9,4 @@ ETHCROLink:
   xpath : //*[contains(text(),"CRO")]/preceding-sibling::span[contains(text(),"ETH")]
 
 CroUsdcChannel:
-  xpath1 : //*[contains(@class,"pair-toggle") and contains(text(),"CRO/USDC")]
   xpath : //*[contains(@class,"pair-toggle")]

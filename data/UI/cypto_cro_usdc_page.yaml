@@ -1,8 +1,100 @@
 LoginBtn_BuyCRO:
-  xpath : //*[@class="e-tab-pane active"]//*[contains(@class,"trade-block")][1]//button
+  xpath: //*[@class="e-tab-pane active"]//*[contains(@class,"trade-block")][1]//button
 
 LoginBtn_SellCRO:
-  xpath : //*[@class="e-tab-pane active"]//*[contains(@class,"trade-block")][2]//button
+  xpath: //*[@class="e-tab-pane active"]//*[contains(@class,"trade-block")][2]//button
 
 Login_page_title:
-  xpath : //h4[contains(text(),"Log in to Crypto.com")]
+  xpath: //h4[contains(text(),"Log in to Crypto.com")]
+
+CurrentInfo_last_price:
+  xpath: //*[@class="symbol-info"]//*[@class="item item-last-price"]
+
+CurrentInfo_Change:
+  xpath: //*[@class="symbol-info"]//*[@class="item"][1]
+
+CurrentInfo_High_price:
+  xpath: //*[@class="symbol-info"]//*[@class="item"][2]
+
+CurrentInfo_Low_price:
+  xpath: //*[@class="symbol-info"]//*[@class="item"][3]
+
+CurrentInfo_24H_Vol:
+  xpath: //*[@class="symbol-info"]//*[@class="item"][4]
+
+Tv_chart_Module:
+  id: tv_chart_container
+
+Tv_chart_iframe:
+  xpath: //iframe[contains(@id,"tradingview")]
+
+Tv_chart_container:
+  xpath: //*[@class="chart-container active"]
+
+Tv_chart_tool:
+  xpath: //*[contains(@class,"drawingToolbar")]
+
+OrderBook_title:
+  xpath: //*[@class="order-book-title"]
+
+OrderBook_Price(USDC):
+  xpath: //*[@class="order-book-table-header"]//*[contains(text(),"Price(USDC)")]
+
+OrderBook_Amount(CRO):
+  xpath: //*[@class="order-book-table-header"]//*[contains(text(),"Amount(CRO)")]
+
+OrderBook_Total(CRO):
+  xpath: //*[@class="order-book-table-header"]//*[contains(text(),"Total(CRO)")]
+
+OrderBook_Filter_all:
+  xpath: //*[@class="e-icon e-icon-book"]
+
+OrderBook_Filter_green:
+  xpath: //*[@class="e-icon e-icon-book-bids"]
+
+OrderBook_Filter_red:
+  xpath: //*[@class="e-icon e-icon-book-asks"]
+
+OrderBook_current_price:
+  xpath: //*[@class="current-price"]
+
+TradeHistory_title:
+  xpath: //*[@class="trading-history-title"]
+
+TradeHistory_Price(USDC):
+  xpath: //*[@class="trading-history-header"]//*[contains(text(),"Price(USDC)")]
+
+TradeHistory_Amount(CRO):
+  xpath: //*[@class="trading-history-header"]//*[contains(text(),"Amount(CRO)")]
+
+TradeHistory_time:
+  xpath: //*[@class="trading-history-header"]//*[contains(text(),"Time")]
+
+TradeHistory_list:
+  xpath: //*[@class="trading-history"]//*[@class="lazy-list"]
+
+Order_list_box:
+  xpath: //*[@class="order-list-box order-list"]
+
+OpenOrder_btn:
+  xpath: //*[@class="order-list-box order-list"]//*[contains(@class,"e-tabs__nav-item") and contains(text(),"Open Order")]
+
+OrderHistory_btn:
+  xpath: //*[@class="order-list-box order-list"]//*[contains(@class,"e-tabs__nav-item") and contains(text(),"Order History")]
+
+OpenOrder_table:
+  xpath: //*[@class="order-table e-table"]//table[@class="e-table__header"]
+
+OrderHistory_table:
+  xpath: //*[@class="desktop-history-orders"]//table[@class="e-table__header"]
+
+OrderHistory_filter:
+  css: .orders-filter
+
+
+
+
+
+
+
+

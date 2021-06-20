@@ -1,5 +1,6 @@
 # encoding: utf-8
 Feature: API Feature
+
   Scenario: Get respond from 9-days forecast
     When I send a request with Get method
     Then Verify the status code
