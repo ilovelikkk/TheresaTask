@@ -96,6 +96,7 @@ Feature: UI-Automation for CRO/USDC trade page
     Then Verify the CRO trade page is showing
 ```
 #### (3)Write your module in module step file in below location: feature > Module_UI > xxxx.py
+Module file use the page data name the you set in the yaml data file.
 ```python
 @when('Navigate to CRO trade page')
 def step_impl(context):
@@ -106,6 +107,8 @@ def step_impl(context):
         when I use js click with CroUsdcLink by the css
     ''')
 ```
+
+
 #### Use more base step action:
 > `Click action` : "I click {somewhere} by the {attribute}" <br> 
 `Sendkey action`: "I input {someword} to the {component} by the {attribute}" <br> 
