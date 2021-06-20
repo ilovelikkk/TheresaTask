@@ -37,7 +37,7 @@ Change setting in start_test.py:
 
 ## 4.How case run
 Design: feature file > Module_UI(Module_API) > steps(base_steps.py) <br>
-feature file example :
+**Feature file example :**
 ```gherkin
 Feature: UI-Automation for CRO/USDC trade page
   Scenario: Navigate to CRO/USDC trade page
@@ -46,7 +46,7 @@ Feature: UI-Automation for CRO/USDC trade page
 ```
 
 feature call the step from Module_UI: <br>
-Module file example: <br> 
+**Module file example:** <br> 
 ```python
 @when('Navigate to CRO trade page')
 def step_impl(context):
@@ -59,7 +59,7 @@ def step_impl(context):
 ```
 
 Module call the step from base_steps.py <br>
-base_steps file example: <br>
+**base_steps file example:** <br>
 ```python
 # Click action
 @when('I click {somewhere} by the {attribute}')
@@ -71,4 +71,21 @@ def step_impl(context, somewhere, attribute):
         with allure.step("Click element: its " + attribute + " is " + elementValue):
             assert True
 ```
-### 
+### Task Report:
+UI: <br>
+![](https://github.com/ilovelikkk/HELLO/blob/master/2.png)
+
+API: <br>
+![](https://github.com/ilovelikkk/HELLO/blob/master/3.png)
+
+## 5.How to write case
+### For UI testing
+#### (1)Capture element and write it in below location: data>UI>xxxxx.yaml
+yaml data file example
+```yaml
+LoginBtn_SellCRO:
+  xpath: //*[@class="e-tab-pane active"]//*[contains(@class,"trade-block")][2]//button
+Tv_chart_Module:
+  id: tv_chart_container
+```
+
