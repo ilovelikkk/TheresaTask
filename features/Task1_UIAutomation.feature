@@ -27,10 +27,6 @@ Feature: UI-Automation for CRO/USDC trade page
     When Navigate to CRO trade page
     Then Verify login button in Buy CRO module
 
-  Scenario: Verify the TV trade chart module
-    When Navigate to CRO trade page
-    Then Verify the TV trade chart module is showing
-
   Scenario: Verify Open Order in the Order list box module
     When Navigate to CRO trade page
     When Navigate to Open Order in the Order list box module
