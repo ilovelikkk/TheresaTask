@@ -36,7 +36,39 @@ Change setting in start_test.py:
 
 
 ## 4.How case run
-Framework design: feature file > Module_UI(Module_API) > steps(base_steps.py) <br>
-![image](https://github.com/ilovelikkk/HELLO/blob/master/1.png)
+Design: feature file > Module_UI(Module_API) > steps(base_steps.py) <br>
+feature file example :
+```gherkin
+Feature: UI-Automation for CRO/USDC trade page
+  Scenario: Navigate to CRO/USDC trade page
+    When Navigate to CRO trade page
+    Then Verify the CRO trade page is showing
+```
 
+feature call the step from Module_UI: <br>
+Module file example: <br> 
+```python
+@when('Navigate to CRO trade page')
+def step_impl(context):
+    context.execute_steps('''
+        when Navigate to homepage
+        when I click CROMarket by the xpath
+        then I should see the ETHCROLink exist by the xpath
+        when I use js click with CroUsdcLink by the css
+    ''')
+```
 
+Module call the step from base_steps.py <br>
+base_steps file example: <br>
+```python
+# Click action
+@when('I click {somewhere} by the {attribute}')
+def step_impl(context, somewhere, attribute):
+    # context.step.name=context.step.name
+    with allure.step(context.step.name):
+        elementValue = context.page[somewhere][attribute]
+        context.driver.find_element(attribute, elementValue).click()
+        with allure.step("Click element: its " + attribute + " is " + elementValue):
+            assert True
+```
+### 
