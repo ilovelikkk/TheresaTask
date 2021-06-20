@@ -37,6 +37,6 @@ Change setting in start_test.py:
 
 ## 4.How case run
 Framework design: feature file > Module_UI(Module_API) > steps(base_steps.py) <br>
-
+![image](https://github.com/ilovelikkk/HELLO/blob/master/1.png)
 
 
